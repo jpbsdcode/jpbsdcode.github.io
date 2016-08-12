@@ -3,27 +3,52 @@
 @import 'libs/mixins';
 @import 'libs/skel';
 @import 'font-awesome.min.css';
-@import url('http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Raleway:400,800,900');
+@import url('http://fonts.googleapis.com/css?family=Source+Sans+Pro:300');
 
 /*
-	Future Imperfect by HTML5 UP
-	html5up.net | @n33co
+	Identity by HTML5 UP
+	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
 	@include skel-breakpoints((
 		xlarge: '(max-width: 1680px)',
 		large: '(max-width: 1280px)',
-		medium: '(max-width: 980px)',
+		medium: '(max-width: 960px)',
 		small: '(max-width: 736px)',
-		xsmall: '(max-width: 480px)'
+		xsmall: '(max-width: 480px)',
+		xxsmall: '(max-width: 360px)'
 	));
 
 	@include skel-layout((
 		reset: 'full',
-		boxModel: 'border',
-		grid: ( gutters: 1em )
+		boxModel: 'border'
 	));
+
+	@mixin icon-alt($content: false, $link: false) {
+		@include icon($content);
+		$size: _size(border-width) * 1.25;
+
+		&:before {
+			color: _palette(bg);
+			text-shadow: $size 0px 0px _palette(border),
+						($size * -1) 0px 0px _palette(border),
+						0px $size 0px _palette(border),
+						0px ($size * -1) 0px _palette(border);
+
+		}
+
+		@if $link {
+			&:hover {
+				&:before {
+					text-shadow: $size 0px 0px _palette(highlight),
+								($size * -1) 0px 0px _palette(highlight),
+								0px $size 0px _palette(highlight),
+								0px ($size * -1) 0px _palette(highlight);
+				}
+			}
+		}
+	}
 
 // Base.
 
@@ -32,25 +57,13 @@
 
 // Component.
 
-	@import 'components/author';
-	@import 'components/blurb';
-	@import 'components/box';
-	@import 'components/button';
 	@import 'components/form';
 	@import 'components/icon';
-	@import 'components/image';
 	@import 'components/list';
-	@import 'components/mini-post';
-	@import 'components/post';
-	@import 'components/section';
-	@import 'components/table';
+	@import 'components/button';
 
 // Layout.
 
-	@import 'layout/header';
-	@import 'layout/wrapper';
 	@import 'layout/main';
-	@import 'layout/sidebar';
-	@import 'layout/intro';
 	@import 'layout/footer';
-	@import 'layout/menu';
+	@import 'layout/wrapper';

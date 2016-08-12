@@ -4,82 +4,48 @@
 @import 'libs/skel';
 
 /*
-	Future Imperfect by HTML5 UP
-	html5up.net | @n33co
+	Identity by HTML5 UP
+	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-$palette-border: #dedede;
+/* List */
 
-/* Button */
+	ul {
+		&.icons {
+			li {
+				a {
+					-ms-behavior: url('assets/js/PIE.htc');
 
-	input[type="submit"],
-	input[type="reset"],
-	input[type="button"],
-	button,
-	.button {
-		border: solid 1px $palette-border;
-	}
-
-/* Form */
-
-	input[type="text"],
-	input[type="password"],
-	input[type="email"],
-	input[type="tel"],
-	select,
-	textarea {
-		border: solid 1px $palette-border;
-	}
-
-/* Post */
-
-	.post {
-		border: solid 1px $palette-border;
-
-		> header {
-			border-bottom: solid 1px $palette-border;
-		}
-	}
-
-/* Mini Post */
-
-	.mini-post {
-		border: solid 1px $palette-border;
-	}
-
-/* Header */
-
-	#header {
-		border-bottom: solid 1px $palette-border;
-
-		.links {
-			border-left: solid 1px $palette-border;
-		}
-
-		.main {
-			ul {
-				li {
-					border-left: solid 1px $palette-border;
+					&:before {
+						text-align: center;
+						font-size: 26px;
+					}
 				}
 			}
 		}
 	}
 
-/* Sidebar */
+/* Main */
 
-	#sidebar {
-		> * {
-			border-top: solid 1px $palette-border;
+	#main {
+		-ms-behavior: url('assets/js/PIE.htc');
+
+		.avatar {
+			img {
+				-ms-behavior: url('assets/js/PIE.htc');
+			}
 		}
 	}
 
-/* Menu */
+/* Footer */
 
-	#menu {
-		border-left: solid 1px $palette-border;
+	#footer {
+		color: #fff;
 
-		> * {
-			border-top: solid 1px $palette-border;
+		.copyright {
+			li {
+				border-left: solid 1px #fff;
+			}
 		}
 	}
